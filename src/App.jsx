@@ -1,10 +1,22 @@
+import {
+  BrowserRouter as Router, Switch, Route
+} from 'react-router-dom';
+
 import './App.css';
+import Login from './components/login';
 
 
 function App() {
   return (
     <div className="App">
-      <h2>Let's Build Linkedin</h2>
+
+      <Router>
+        <Switch>
+          <Route exact path='/' component={Login}>
+
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
