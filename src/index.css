@@ -18,3 +18,7 @@ label, li, nav, p , ul, li, small, span  {
     vertical-align: baseline;
     background: transparent;
 }
+
+body {
+    font-family: Arial, sans-serif;
+}

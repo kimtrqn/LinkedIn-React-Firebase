@@ -7,10 +7,17 @@ const Login = (props) => {
     return (
         <Container>
             <Nav>
-                <Link to='/'>
+                <Link className='link' to='/'>
                     <img src={loginLogo} alt="" />
                 </Link>
+                <div>
+                    <Join>Join Now</Join>
+                    <SignIn>Sign In</SignIn>
+                </div>
             </Nav>
+            <Section>
+
+            </Section>
         </Container>
     )
 };
@@ -36,7 +43,7 @@ const Nav = styled.div`
     flex-wrap: nowrap; /* wont go to new line */
     
 
-    & > Link {
+    & > .link {
         width: 135px;
         height: 34px;
 
@@ -46,5 +53,49 @@ const Nav = styled.div`
     }
 `;
 
+const Join = styled.a`
+    font-size: 16px;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+    margin-right: 12px;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.08);
+        color: rgba(0, 0, 0, 0.9);
+        border-radius: 24px;
+    }
+`;
+const SignIn = styled.a`
+    box-shadow: inset 0 0 0 1px #0a66c2;
+    color: #0a66c2;
+    border-radius: 24px;
+    transition-duration:  167ms;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 10px 24px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+
+    &:hover {
+        background-color: rgba(112, 181, 249, 0.15);
+        color: #0a66c2;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        
+    }
+`;
+
+
+const Section = styled.section`
+    align-content: start;
+    display: flex;
+    min-height: 700px;
+    padding-bottom: 138px;
+    padding-top: 40px;
+`;
 
 
