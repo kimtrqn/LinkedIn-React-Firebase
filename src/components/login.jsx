@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import loginLogo from '../images/login-logo.svg';
+import loginHero from '../images/login-hero.svg';
 
 const Login = (props) => {
 
@@ -16,7 +17,10 @@ const Login = (props) => {
                 </div>
             </Nav>
             <Section>
-
+                <Hero>
+                    <h1>Welcome to your professional community</h1>
+                    <img src={loginHero} alt="" />
+                </Hero>
             </Section>
         </Container>
     )
@@ -96,6 +100,42 @@ const Section = styled.section`
     min-height: 700px;
     padding-bottom: 138px;
     padding-top: 40px;
+    padding: 60px 0;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1128px;
+    align-items: center;
+    margin: auto;
+
+    @media (max-width: 768px) {
+        margin: auto;
+        min-height: 0px;
+    }
 `;
 
+
+const Hero = styled.div`
+    width: 100%;
+
+    h1 {
+        padding-bottom: 0;
+        width: 55%;
+        font-size: 56px;
+        color: #2977c9;
+        font-weight: 200;
+        line-height: 70px;
+
+        @media (max-width: 768px) {
+            text-align: center;
+            font-size: 20px;
+            width: 100%;
+            line-height: 2px;
+        }
+    }
+
+    img {
+
+    }
+`;
 
