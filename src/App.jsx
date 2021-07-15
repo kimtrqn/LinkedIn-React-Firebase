@@ -4,6 +4,7 @@ import {
 
 import './App.css';
 import Login from './components/login';
+import Home from './components/home';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={Login} />
-
+          <Route exact path='/home' component={Home} />
           
         </Switch>
       </Router>
