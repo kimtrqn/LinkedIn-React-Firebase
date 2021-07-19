@@ -8,7 +8,9 @@ import navJob from '../images/nav-jobs.svg';
 import navMessage from '../images/nav-messaging.svg';
 import navNetwork from '../images/nav-network.svg';
 import navNotification from '../images/nav-notifications.svg';
-import navWork from '../images/nav-work.svg'
+import navWork from '../images/nav-work.svg';
+import downIcon from '../images/down-icon.svg';
+import userImg from '../images/user.svg';
 
 
 const Header = (props) => {
@@ -31,7 +33,7 @@ const Header = (props) => {
                 </Search>
                 <Nav>
                     <NavListWrap>
-                        <NavList>
+                        <NavList className='active'>
                             <a>
                                 <img src={navHome} alt="" />
                                 <span>Home</span>
@@ -154,6 +156,20 @@ const NavListWrap = styled.ul`
     display: flex;
     flex-wrap: none;
     list-style-type: none;
+
+    .active {
+        span:after {
+            content: '';
+            transform: scaleX(1);
+            border-bottom: 2px solid var(--white, #fff);
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            transition: transform 0.2s ease-in-out;
+            width: 100%;
+            border-color: rgba(0, 0, 0, 0.9);
+        }
+    }
 `;
 
 const NavList = styled.li`
@@ -194,3 +210,4 @@ const NavList = styled.li`
         }
     }
 `;
+
