@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import homeLogo from '../images/home-logo.svg';
 import searchIcon from '../images/search-icon.svg';
+import navHome from '../images/nav-home.svg';
 
 const Header = (props) => {
     
@@ -21,7 +22,14 @@ const Header = (props) => {
                     </SearchIcon>
                 </Search>
                 <Nav>
-                    Nav Menu
+                    <NavListWrap>
+                        <NavList>
+                            <a>
+                                <img src={navHome} alt="" />
+                                <span>Home</span>
+                            </a>
+                        </NavList>
+                    </NavListWrap>
                 </Nav>
             </Content>
         </Container>
@@ -105,5 +113,36 @@ const Nav = styled.nav`
         bottom: 0;
         background: white;
         width: 100%;
+
+    }
+`;
+
+const NavListWrap = styled.ul`
+    display: flex;
+    flex-wrap: none;
+    list-style-type: none;
+`;
+
+const NavList = styled.li`
+    display: flex;
+    align-items: center;
+
+    a {
+        align-items: center;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        font-weight: 400;
+        justify-content: center;
+        line-height: 1.5;
+        min-height: 52px;
+        min-width: 80px;
+        position: relative;
+        text-decoration: none;
+
+        span {
+            color: rgba(0, 0, 0, 0.6);
+        }
     }
 `;
