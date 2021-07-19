@@ -1,7 +1,14 @@
 import styled from 'styled-components';
+
 import homeLogo from '../images/home-logo.svg';
 import searchIcon from '../images/search-icon.svg';
 import navHome from '../images/nav-home.svg';
+import navJob from '../images/nav-jobs.svg';
+import navMessage from '../images/nav-messaging.svg';
+import navNetwork from '../images/nav-network.svg';
+import navNotification from '../images/nav-notifications.svg';
+import navWork from '../images/nav-work.svg';
+
 
 const Header = (props) => {
     
@@ -142,7 +149,22 @@ const NavList = styled.li`
         text-decoration: none;
 
         span {
+            display: flex;
             color: rgba(0, 0, 0, 0.6);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            min-width: 70px;
+
+        }
+    }
+
+    &:hover, &:active {
+        a {
+            span {
+                color: rgba(0, 0, 0, 0.9);
+            }
         }
     }
 `;
