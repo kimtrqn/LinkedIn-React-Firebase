@@ -64,6 +64,23 @@ const Header = (props) => {
                             </a>
                         </NavList>
 
+                        <User>
+                            <a>
+                                <img src={userImg} alt="" />
+                                <span>Me</span>
+                                <img src={downIcon} alt="" />
+                            </a>
+                        </User>
+
+                        <Work>
+                            <a>
+                                <img src={navWork} alt="" />
+                                <span>Work
+                                    <img src={downIcon} alt="" />
+                                </span>
+                            </a>
+                        </Work>
+
                     </NavListWrap>
                 </Nav>
             </Content>
@@ -211,3 +228,25 @@ const NavList = styled.li`
     }
 `;
 
+
+const User = styled(NavList)`
+    a > svg {
+        width: 24px;
+        border-radius: 50%;
+    }
+
+    a > img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+    }
+`;
+
+const Work = styled(User)`
+    border-left: 1px solid rgba(0, 0, 0, 0.09);
+`;
