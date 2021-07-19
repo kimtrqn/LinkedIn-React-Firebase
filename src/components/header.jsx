@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 import homeLogo from '../images/home-logo.svg';
 import searchIcon from '../images/search-icon.svg';
 import navHome from '../images/nav-home.svg';
@@ -7,7 +8,7 @@ import navJob from '../images/nav-jobs.svg';
 import navMessage from '../images/nav-messaging.svg';
 import navNetwork from '../images/nav-network.svg';
 import navNotification from '../images/nav-notifications.svg';
-import navWork from '../images/nav-work.svg';
+import navWork from '../images/nav-work.svg'
 
 
 const Header = (props) => {
@@ -36,6 +37,31 @@ const Header = (props) => {
                                 <span>Home</span>
                             </a>
                         </NavList>
+                        <NavList>
+                            <a>
+                                <img src={navNetwork} alt="" />
+                                <span>Network</span>
+                            </a>
+                        </NavList>
+                        <NavList>
+                            <a>
+                                <img src={navJob} alt="" />
+                                <span>Jobs</span>
+                            </a>
+                        </NavList>
+                        <NavList>
+                            <a>
+                                <img src={navMessage} alt="" />
+                                <span>Messages</span>
+                            </a>
+                        </NavList>
+                        <NavList>
+                            <a>
+                                <img src={navNotification} alt="" />
+                                <span>Notifications</span>
+                            </a>
+                        </NavList>
+
                     </NavListWrap>
                 </Nav>
             </Content>
