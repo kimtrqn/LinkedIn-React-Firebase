@@ -70,6 +70,10 @@ const Header = (props) => {
                                 <span>Me</span>
                                 <img src={downIcon} alt="" />
                             </a>
+
+                            <SignOut>
+                                <a>Sign Out</a>
+                            </SignOut>
                         </User>
 
                         <Work>
@@ -228,6 +232,21 @@ const NavList = styled.li`
     }
 `;
 
+const SignOut = styled.div`
+    position: absolute;
+    top: 45px;
+    background: white;
+    border-radius: 0 0  5px 5px;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    transition-duration: 167ms;
+    text-align: center;
+    display: none;
+    cursor: pointer;
+
+`;
+
 
 const User = styled(NavList)`
     a > svg {
@@ -245,8 +264,18 @@ const User = styled(NavList)`
         display: flex;
         align-items: center;
     }
+
+    &:hover {
+        ${SignOut} {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+    }
 `;
 
 const Work = styled(User)`
     border-left: 1px solid rgba(0, 0, 0, 0.09);
 `;
+
+
