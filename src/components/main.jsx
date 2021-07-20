@@ -4,7 +4,7 @@ const Main = (props) => {
 
     return (
         <Container>
-main
+            Main
         </Container>
     )
 };
