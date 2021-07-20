@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 import Header from './header';
+import LeftSide from './leftSide';
+import Main from './main';
+import RightSide from './rightSide';
 
 const Home = (props) => {
 
@@ -20,6 +23,12 @@ const Home = (props) => {
                         moving.
                     </p>
             </Section>
+
+            <Layout>
+                <LeftSide />
+                <Main />
+                <RightSide />
+            </Layout>
         </Container>
 
         </div>
@@ -67,4 +76,21 @@ const Section = styled.section`
         flex-direction: column;
         padding: 0 5px;
     }
+`;
+
+const Layout = styled.div`
+    display: grid; /* to label the grid  */
+    grid-template-areas: "leftside main rightside";
+    grid-template-columns: minmax(0, 5fr) mixmax(0, 12fr), minmax(300px, 7fr);
+    column-gap: 25px;
+    row-gap: 25px;
+    /* grid-template-rows: auto; */
+    margin: 25px 0;
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        padding: 0 5px;
+    }
+
 `;
