@@ -8,7 +8,7 @@ const RightSide = (props) => {
         <Container>
             <FollowCard>
                 <Title>
-                    <h2>Add to yoru feed</h2>
+                    <h2>Add to your feed</h2>
                     <img src={feedIcon} alt="" />
                 </Title>
 

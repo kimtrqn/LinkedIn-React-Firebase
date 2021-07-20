@@ -3,7 +3,9 @@ import user from '../images/user.svg';
 import photoIcon from '../images/photo-icon.svg';
 import eventIcon from  '../images/event-icon.svg';
 import videoIcon from '../images/video-icon.svg';
-import articleIcon  from '../images/article-icon.svg';
+import articleIcon from '../images/article-icon.svg';
+import threeDots from '../images/ellipses.svg';
+import sharedImg from '../images/share-image.svg';
 
 const Main = (props) => {
 
@@ -37,6 +39,22 @@ const Main = (props) => {
                     </button>
                 </div>
             </Sharebox>
+
+            <Article>
+                <SharedActor>
+                    <a>
+                        <img src={user} alt="" />
+                        <div>
+                            <span>Title</span>
+                            <span>Info</span>
+                            <span>Date</span>
+                        </div>
+                    </a>
+                    <button>
+                        <img src={threeDots} alt="" />
+                    </button>
+                </SharedActor>
+            </Article>
         </Container>
     )
 };
@@ -117,4 +135,66 @@ const Sharebox = styled(CommonCard)`
             }
         }
     }
+`;
+
+const Article = styled(CommonCard)`
+    padding: 0;
+    margin: 0 0 8px;
+    overflow: visible;
+`;
+
+const SharedActor = styled.div`
+    padding-right: 40px;
+    flex-wrap: nowrap;
+    padding: 12px 16px 0;
+    margin-bottom: 8px;
+    align-items: center;
+    display: flex;
+    
+    a {
+        margin-right: 12px;
+        flex-grow: 1;
+        overflow: hidden;
+        display: flex;
+        text-decoration: none;
+
+        img {
+            width: 48px;
+            height: 48px;
+        }
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            flex-basis: 0;
+            margin-left: 8px;
+            overflow: hidden;
+
+            span {
+                text-align: left;
+                
+                &:first-child {
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: rgba(0, 0, 0, 1);
+                }
+
+                &:nth-child(n+1) {
+                    font-size: 12px;
+                    color: rgba(0, 0, 0, 0.6);
+                }
+            }
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 12px;
+        top: 0;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+
 `;
