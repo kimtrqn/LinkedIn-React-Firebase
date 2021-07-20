@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import user from '../images/user.svg';
 import photoIcon from '../images/photo-icon.svg';
+import eventIcon from  '../images/event-icon.svg';
+import videoIcon from '../images/video-icon.svg';
+import articleIcon  from '../images/article-icon.svg';
 
 const Main = (props) => {
 
@@ -18,7 +21,20 @@ const Main = (props) => {
                         <span>Photo</span>
                     </button>
 
-                    <button></button>
+                    <button>
+                        <img src={videoIcon} alt="" />
+                        <span>Video</span>
+                    </button>
+
+                    <button>
+                        <img src={eventIcon} alt="" />
+                        <span>Event</span>
+                    </button>
+
+                    <button>
+                        <img src={articleIcon} alt="" />
+                        <span>Write article</span>
+                    </button>
                 </div>
             </Sharebox>
         </Container>
@@ -48,4 +64,57 @@ const Sharebox = styled(CommonCard)`
     color: #958b7b;
     margin: 0 0 8px;
     background: white;
+
+    div {
+        button {
+            outline: none;
+            color: rgba(0, 0, 0, 0.6);
+            line-height: 1.5;
+            min-height: 48px;
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        &:first-child {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px 0px 16px;
+            
+            img {
+                width: 48px;
+                border-radius: 50%;
+                margin-right: 8px;
+            }
+
+            button {
+                margin: 4px 0;
+                flex-grow: 1;
+                border-radius:  35px;
+                padding-left: 16px;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                background-color: white;
+                text-align: white;
+            }
+        }
+
+        &:nth-child(2) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-bottom: 4px;
+
+            button{
+                img {
+                    margin: 0  4px 0 -2px;
+                }
+
+                span {
+                    color: #70b5f9;
+                }
+            }
+        }
+    }
 `;
