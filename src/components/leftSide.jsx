@@ -1,20 +1,25 @@
 import styled from 'styled-components';
-import photo from '../images/photo.svg';
+import photo1 from '../images/photo.svg';
 import cardBg from '../images/card-bg.svg';
+import widgetIcon from '../images/widget-icon.svg';
+import itemIcon from '../images/item-icon.svg';
 
-const bG = {
+const cbG = {
     backgroundImage: `url(${cardBg})`
 }
 
+const pbG = {
+    backgroundImage: `url(${photo1})`
+}
 const LeftSide = (props) => {
 
     return (
         <Container>
             <ArtCard>
                 <UserInfo>
-                    <CardBackground style={bG}/>
+                    <CardBackground style={cbG}/>
                     <a>
-                        <Photo />
+                        <Photo style={pbG}/>
                         <Link>Welcome, there!</Link>
                     </a>
 
@@ -22,7 +27,28 @@ const LeftSide = (props) => {
                         <AddPhotoText>Add a photo</AddPhotoText>
                     </a>
                 </UserInfo>
+                
+                <Widget>
+                    <a>
+                        <div>
+                            <span>Connections</span>
+                            <span>Grow your network</span>
+                        </div>
+                        <img src={widgetIcon} alt=""  />
+                    </a>
+                </Widget>
+
+                <Item>
+                    <span>
+                        <img src={itemIcon} alt="" />
+                        My Items
+                    </span>
+                </Item>
             </ArtCard>
+
+            <CommunityCard>
+                
+            </CommunityCard>
         </Container>
     )
 };
@@ -54,7 +80,6 @@ const UserInfo = styled.div`
 `;
 
 const CardBackground = styled.div`
-  /* background: url("../images/card-bg.svg"); */
   background-color: teal;
   background-position: center;
   background-size: 462px;
@@ -62,17 +87,100 @@ const CardBackground = styled.div`
   margin: -12px -12px 0;
 `;
 
-const  Photo = styled.div`
-
+const Photo = styled.div`
+    box-shadow: none;
+    width: 72px;
+    height: 72px;
+    box-sizing: border-box;
+    background-clip: content-box;
+    background-color: white;
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    border: 2px solid white;
+    margin: -38px auto 12px;
+    border-radius: 50%;
 `;
 
 const Link = styled.div`
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(0, 0 ,0, 0.9);
+    font-weight: 600;
 
 `;
 
 const AddPhotoText = styled.div`
+    color: #0a66c2;
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 1.33;
+    font-weight: 400;
 
 `;
 
+const Widget = styled.div`
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    & > a {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 12px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+            span {
+                font-size: 12px;
+                line-height: 1.333;
+
+                &:first-child {
+                    color: rgba(0, 0, 0, 0.6);
+                }
+
+                &:nth-child(2) {
+                    color: rgba(0, 0, 0, 1);
+                }
+            }
+        }
+    }
+
+    svg {
+        color: rgba(0, 0, 0, 1);
+    }
+`;
+
+
+const Item = styled.a`
+    border-color: rgba(0, 0, 0, 0.8);
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    display: block;
+
+    span {
+        display: flex;
+        align-items: center;
+        color: rgba(0, 0, 0, 1);
+
+        svg {
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+`;
 
 
