@@ -5,7 +5,8 @@ import eventIcon from  '../images/event-icon.svg';
 import videoIcon from '../images/video-icon.svg';
 import articleIcon from '../images/article-icon.svg';
 import threeDots from '../images/ellipses.svg';
-import sharedImg from '../images/share-image.svg';
+// import sharedImg from '../images/share-image.svg';
+import  sharedImg from '../images/shared-image.jpg';
 
 const Main = (props) => {
 
@@ -54,6 +55,31 @@ const Main = (props) => {
                         <img src={threeDots} alt="" />
                     </button>
                 </SharedActor>
+
+                <Description>
+                    Description
+                </Description>
+
+                <ShareImg>
+                    <a>
+                        <img src={sharedImg} alt="" />
+                    </a>
+                </ShareImg>
+
+                <SocialCounts>
+                    <li>
+                        <button>
+                            <img src="https://static-exp1.licdn.com/sc/h/d310t2g24pvdy4pt1jkedo4yb" alt="" />
+                            <img src="https://static-exp1.licdn.com/sc/h/7fx9nkd7mx8avdpqm5hqcbi97" alt="" />
+                            <span>75</span>
+                        </button>
+                    </li>
+                    <li>
+                        <a>
+                            2 comments
+                        </a>
+                    </li>
+                </SocialCounts>
             </Article>
         </Container>
     )
@@ -196,5 +222,31 @@ const SharedActor = styled.div`
         border: none;
         outline: none;
     }
+
+`;
+
+const Description = styled.div`
+    padding: 0 16px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 14px;
+    text-align: left;
+`;
+
+const ShareImg =  styled.div`
+    margin-top: 8px;
+    width: 100%;
+    display: block;
+    position: relative;
+    background-color: #f9fafb;
+
+    img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+`;
+
+const SocialCounts = styled.div`
 
 `;
