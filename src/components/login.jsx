@@ -1,5 +1,8 @@
-import styled from 'styled-components';
+import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { signInAPI } from '../actions/index';
+
 import loginLogo from '../images/login-logo.svg';
 import loginHero from '../images/login-hero.svg';
 import googleLogo from '../images/google.svg';
@@ -24,7 +27,7 @@ const Login = (props) => {
                 </Hero>
 
                 <Form>
-                    <Google>
+                    <Google onClick={() => props.signIn()}>
                         <img src={googleLogo} alt="" />
                         Sign in with Google
                     </Google>
@@ -34,7 +37,17 @@ const Login = (props) => {
     )
 };
 
-export default Login;
+const mapStateToProps = (state) => {
+	return {
+		user: state.userState.user,
+	};
+};
+
+const mapDispatchToProps = (dispatch) => ({
+	signIn: () => dispatch(signInAPI()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
 
 //styled css with styled components
