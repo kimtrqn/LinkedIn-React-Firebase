@@ -5,8 +5,11 @@ import eventIcon from  '../images/event-icon.svg';
 import videoIcon from '../images/video-icon.svg';
 import articleIcon from '../images/article-icon.svg';
 import threeDots from '../images/ellipses.svg';
-// import sharedImg from '../images/share-image.svg';
 import  sharedImg from '../images/shared-image.jpg';
+import likeIcon from '../images/like-icon.svg';
+import commentsIcon  from '../images/comment-icon.svg';
+import shareIcon from '../images/share-icon.svg';
+import sendIcon from '../images/send-icon.svg';
 
 const Main = (props) => {
 
@@ -80,6 +83,24 @@ const Main = (props) => {
                         </a>
                     </li>
                 </SocialCounts>
+                <SocialActions>
+                    <button>
+                        <img src={likeIcon} alt="" />
+                        <span>Like</span>
+                    </button>
+                    <button>
+                        <img src={commentsIcon} alt="" />
+                        <span>Comments</span>
+                    </button>
+                    <button>
+                        <img src={shareIcon} alt="" />
+                        <span>Share</span>
+                    </button>
+                    <button>
+                        <img src={sendIcon} alt="" />
+                        <span>Send</span>
+                    </button>
+                </SocialActions>
             </Article>
         </Container>
     )
@@ -247,6 +268,44 @@ const ShareImg =  styled.div`
     }
 `;
 
-const SocialCounts = styled.div`
+const SocialCounts = styled.ul`
+    line-height: 1.3;
+    display: flex;
+    align-items: flex-start;
+    overflow: auto;
+    margin: 0 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e9e5df;
+    list-style: none;
 
+    li {
+        margin-right: 5px;
+        font-size: 12px;
+
+        button {
+            display: flex;
+        }
+    }
+`;
+
+const SocialActions = styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    min-height:  40px;
+    padding: 4px 8px;
+
+    button {
+        display:  inline-flex;
+        align-items:  center;
+        padding: 8px;
+        color: #0a66c2;
+
+        @media  (min-width: 768px) {
+            span {
+                margin-left: 8px;
+            }
+        }
+    }
 `;
