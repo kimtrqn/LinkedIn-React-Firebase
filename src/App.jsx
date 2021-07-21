@@ -3,17 +3,15 @@ import {
 } from 'react-router-dom';
 
 import './App.css';
-import Login from './components/login';
+import LoginContainer from './components/LoginContainer';
 import Home from './components/home';
 
 
 function App() {
   return (
-    <div className="App">
-
-      <Router>
+    <div className="App">      <Router>
         <Switch>
-          <Route exact path='/' component={Login} />
+          <Route exact path='/' component={LoginContainer} />
           <Route exact path='/home' component={Home} />
           
         </Switch>
