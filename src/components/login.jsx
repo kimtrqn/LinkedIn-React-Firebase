@@ -1,7 +1,9 @@
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 import styled from 'styled-components';
 import { signInAPI } from '../actions/index';
+
 
 import loginLogo from '../images/login-logo.svg';
 import loginHero from '../images/login-hero.svg';
@@ -11,6 +13,9 @@ const Login = (props) => {
 
     return (
         <Container>
+            {
+                props.user && <Redirect to='/home' />
+            }
             <Nav>
                 <Link className='link' to='/'>
                     <img src={loginLogo} alt="" />
